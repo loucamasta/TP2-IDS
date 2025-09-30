@@ -275,6 +275,20 @@ https://www.tooplate.com/view/2119-gymso-fitness
     padding-top: 0;
   }
 
+  .navbar .container {
+    display: flex;               /* activa Flexbox */
+    justify-content: center;     /* centra horizontalmente */
+    align-items: center;         /* centra verticalmente */
+}
+  
+.navbar-brand img {
+    height: 90px;       /* tamaño fijo para que no crezca demasiado */
+    width: auto;        /* mantiene proporción */
+    margin-left: 10px;  /* espacio a la izquierda */
+    margin-right: 10px; /* opcional, espacio entre logo y texto */
+    vertical-align: middle; /* alinea el logo con el texto */
+}
+  
   .nav-item .nav-link {
     display: block;
     color: var(--white-color);
