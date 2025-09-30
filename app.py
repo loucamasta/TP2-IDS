@@ -1,5 +1,16 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, url_for, request, redirect
+from flask_mail import Mail, Message
+
 app = Flask(__name__)
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_USERNAME'] = 'your-email@gmail.com'
+app.config['MAIL_PASSWORD'] = 'your-email-password'
+app.config['MAIL_DEFAULT_SENDER'] = 'your-email@gmail.com'
+mail = Mail(app)
 
 info_evento = {
         "nombre": "Rally MTB 2025",
@@ -24,8 +35,19 @@ info_evento = {
 def index():
     return render_template("index.html", info_evento=info_evento)
 
-@app.route("/registration")
+@app.route("/registration", methods=['GET', 'POST'])
 def registration():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        email = request.form['email']
+        modalidad = request.form['modalidad']
+
+        msg = Message(f"Inscripción de {nombre}", recipients=["nombre-del-club@gmail.com"])
+        msg.body = f"Nombre: {nombre}\nEmail: {email}\nModalidad: {modalidad}"
+        mail.send(msg)
+
+        return redirect("/registration")
+
     return render_template("registration.html")
 
 if __name__ == "__main__":
