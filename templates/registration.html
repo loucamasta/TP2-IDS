@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscripción Rally MTB</title>
+</head>
+<body>
+    <h1>Formulario de inscripción</h1>
+    <form action="/registration" method="POST">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="modalidad">Modalidad:</label>
+        <select id="modalidad" name="modalidad">
+            <option value="Corta">Corta (30 km)</option>
+            <option value="Larga">Larga (80 km)</option>
+        </select><br><br>
+
+        <button type="submit">Enviar inscripción</button>
+    </form>
+</body>
+</html>
