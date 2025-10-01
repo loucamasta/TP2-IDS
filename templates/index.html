@@ -262,16 +262,16 @@
                <div class="row">
 
                     <div class="ml-auto col-lg-5 col-md-6 col-12">
-                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Feel free to ask anything</h2>
+                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Formulario de inscripción</h2>
 
-                        <form action="#" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
-                            <input type="text" class="form-control" name="cf-name" placeholder="Name">
-
-                            <input type="email" class="form-control" name="cf-email" placeholder="Email">
-
-                            <textarea class="form-control" rows="5" name="cf-message" placeholder="Message"></textarea>
-
-                            <button type="submit" class="form-control" id="submit-button" name="submit">Send Message</button>
+                        <form action="{{ url_for('registration') }}" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
+                            <select class="form-control" name="modalidad">
+                                <option value="Corta">Corta (30 km)</option>
+                                <option value="Larga">Larga (80 km)</option>
+                            </select>
+                            <button type="submit" class="form-control" id="submit-button" name="submit">Enviar inscripción</button>
                         </form>
                     </div>
 
