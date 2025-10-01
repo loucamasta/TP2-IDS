@@ -37,18 +37,14 @@ def index():
 
 @app.route("/registration", methods=["GET", "POST"])
 def registration():
-    if request.method == "POST": 
+   if request.method == "POST": 
         nombre = request.form["nombre"]
         email = request.form["email"]
         modalidad = request.form["modalidad"]
-        
-        msg = Message(f"Inscripción de {nombre}", recipients=["club@gmail.com"])
-        msg.body = f"Nombre: {nombre}\nEmail: {email}\nModalidad: {modalidad}"
-        mail.send(msg)
 
         
-        return render_template("index.html", mensaje="Inscripción enviada correctamente")
-    return render_template("registration.html")
+        return render_template("registration.html", mensaje="Inscripción enviada correctamente")
+   return render_template("registration.html")
 
 if __name__ == "__main__":
     app.run("127.0.0.1", port="5001", debug=True)
