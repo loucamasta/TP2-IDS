@@ -104,7 +104,17 @@
                     leé atentamente el <strong>reglamento</strong> y descargá el <strong>deslinde</strong> antes de participar.
                 </p>
 
-                    <a href="#" class="btn custom-btn bg-color mt-3" data-aos="fade-up" data-aos-delay="300" data-toggle="modal" data-target="#membershipForm">Become a member today</a>
+                   <a href="{{ url_for('registration') }}" 
+                   class="btn custom-btn bg-color mt-3" 
+                   data-aos="fade-up" 
+                   data-aos-delay="300"
+                   target="_blank">
+                   Registrate
+                </a>
+                {% if mensaje %}
+                <p style="color: green">{{ mensaje }}</p>
+                {% endif %}
+
                 </div>
 
                 <div class="mr-lg-auto mt-3 col-lg-4 col-md-6 col-12">
@@ -256,25 +266,8 @@
          
 
 
-     <!-- CONTACT -->
-     <section class="contact section" id="contact">
-          <div class="container">
-               <div class="row">
-
-                    <div class="ml-auto col-lg-5 col-md-6 col-12">
-                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200">Formulario de inscripción</h2>
-
-                        <form action="{{ url_for('registration') }}" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre">
-                            <input type="email" class="form-control" name="email" placeholder="Email">
-                            <select class="form-control" name="modalidad">
-                                <option value="Corta">Corta (30 km)</option>
-                                <option value="Larga">Larga (80 km)</option>
-                            </select>
-                            <button type="submit" class="form-control" id="submit-button" name="submit">Enviar inscripción</button>
-                        </form>
-                    </div>
-
+     <!-- MAPA-->
+  
                     <div class="mx-auto mt-4 mt-lg-0 mt-md-0 col-lg-5 col-md-6 col-12">
                         <h2 class="mb-4" data-aos="fade-up" data-aos-delay="600">Mapa del recorrido</h2>
                         <li data-aos="fade-up" data-aos-delay="100">
