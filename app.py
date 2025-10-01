@@ -35,19 +35,19 @@ info_evento = {
 def index():
     return render_template("index.html", info_evento=info_evento)
 
-@app.route("/registration", methods=['GET', 'POST'])
+@app.route("/registration", methods=["GET", "POST"])
 def registration():
-    if request.method == 'POST':
-        nombre = request.form['nombre']
-        email = request.form['email']
-        modalidad = request.form['modalidad']
-
-        msg = Message(f"Inscripción de {nombre}", recipients=["nombre-del-club@gmail.com"])
+    if request.method == "POST": 
+        nombre = request.form["nombre"]
+        email = request.form["email"]
+        modalidad = request.form["modalidad"]
+        
+        msg = Message(f"Inscripción de {nombre}", recipients=["club@gmail.com"])
         msg.body = f"Nombre: {nombre}\nEmail: {email}\nModalidad: {modalidad}"
         mail.send(msg)
 
-        return redirect("/registration")
-
+        
+        return render_template("index.html", mensaje="Inscripción enviada correctamente")
     return render_template("registration.html")
 
 if __name__ == "__main__":
