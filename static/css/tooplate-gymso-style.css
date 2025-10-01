@@ -276,17 +276,17 @@ https://www.tooplate.com/view/2119-gymso-fitness
   }
 
   .navbar .container {
-    display: flex;               /* activa Flexbox */
-    justify-content: center;     /* centra horizontalmente */
-    align-items: center;         /* centra verticalmente */
+    display: flex;               
+    justify-content: center;     
+    align-items: center;         
 }
   
 .navbar-brand img {
-    height: 90px;       /* tamaño fijo para que no crezca demasiado */
-    width: auto;        /* mantiene proporción */
-    margin-left: 10px;  /* espacio a la izquierda */
-    margin-right: 10px; /* opcional, espacio entre logo y texto */
-    vertical-align: middle; /* alinea el logo con el texto */
+    height: 90px;       
+    width: auto;        
+    margin-left: 10px;  
+    margin-right: 10px; 
+    vertical-align: middle; 
 }
   
   .nav-item .nav-link {
@@ -578,6 +578,40 @@ https://www.tooplate.com/view/2119-gymso-fitness
   .google-map iframe {
     width: 100%;
   }
+
+  /*---------------------------------------
+     LISTADO DE AUSPICIANTES
+  -----------------------------------------*/
+#auspiciantes {
+  padding: 40px;
+  background-color: #f9f9f9;
+}
+
+.titulo_galeria {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+  .galeria {
+  display: flex;              
+  justify-content: center;   
+  align-items: center;      
+  gap: 30px;                  
+  flex-wrap: wrap;           
+  padding: 20px;
+}
+
+.galeria img {
+  height: 80px;               
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.galeria img:hover {
+  transform: scale(1.2);      
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);  
+  border-radius: 10px;  
+}
 
 
   /*---------------------------------------
